@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Teen Finance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-light: radial-gradient(circle at center, #f0f4ff 0%, #ffffff 100%);
+      --bg-dark: radial-gradient(circle at center, #0e1c3d 0%, #0a1224 100%);
+      --container-light: linear-gradient(145deg, #0a1941, #1a2b52);
+      --container-dark: linear-gradient(145deg, #152c58, #0e1c3d);
+      --text-light: #ffffff;
+      --text-dark: #ffffff;
+      --bubble-bg-light: white;
+      --bubble-bg-dark: #1a2b52;
+      --bubble-color-light: #1a2b52;
+      --bubble-color-dark: white;
+    }
+
+    body {
+      background: var(--bg-light);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      overflow-x: hidden;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    body.dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .main-container {
+      background: var(--container-light);
+      color: white;
+      border-radius: 40px;
+      padding: 80px 60px;
+      width: 100%;
+      max-width: 1100px;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 25px #3b69c1, inset 0 0 25px #224078;
+      text-align: center;
+      overflow: hidden;
+      transition: background 0.4s ease;
+    }
+
+    body.dark-mode .main-container {
+      background: var(--container-dark);
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 16px;
+      text-shadow: 0 0 20px #a3c1ff;
+      letter-spacing: 2px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 50px;
+      text-shadow: 0 0 15px #5a8fe6;
+      line-height: 1.6;
+    }
+
+    .bubbles {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 70px;
+      flex-wrap: wrap;
+    }
+
+    .bubble {
+      background: var(--bubble-bg-light);
+      color: var(--bubble-color-light);
+      padding: 28px 46px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), 0 0 18px #5288ff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      z-index: 0;
+    }
+
+    .bubble:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25), 0 0 30px #7facff;
+      z-index: 1;
+    }
+
+    body.dark-mode .bubble {
+      background: var(--bubble-bg-dark);
+      color: var(--bubble-color-dark);
+    }
+
+    .section-link a {
+      display: inline-block;
+      padding: 22px 52px;
+      background: #2a5298;
+      border-radius: 40px;
+      color: white;
+      font-weight: 600;
+      font-size: 1.3rem;
+      text-decoration: none;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4), 0 0 22px #6599ff;
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      user-select: none;
+      margin: 15px 20px;
+    }
+
+    .section-link a:hover {
+      background: #557ee6;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 30px #99bbff;
+      transform: scale(1.1);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 16px;
+      color: #a0b9ff;
+      text-shadow: 0 0 6px #7fa0ff;
+    }
+
+    .mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      padding: 10px 20px;
+      background: #2a5298;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #6599ff;
+      transition: background 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      background: #557ee6;
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
+  <div class="main-container" role="main" aria-label="Smart Teen Finance homepage">
+    <h1>Smart Teen Finance</h1>
+    <p>Helping teens with financial issues and building strong money habits.</p>
+
+    <div class="bubbles">
+      <a class="bubble" href="https://linktr.ee/teen.finance?utm_source=linktree_admin_share" target="_blank" rel="noopener noreferrer">Linktree</a>
+      <a class="bubble" href="mission.html">My Mission</a>
+    </div>
+
+    <div class="section-link">
+      <a href="contact.html" aria-label="Contact Me page">Contact Me</a>
+      <a href="https://forms.gle/46MgjJrKR3Z9oEV67" target="_blank" rel="noopener noreferrer" aria-label="Feedback form">Submit Feedback</a>
+    </div>
+
+    <footer>
+      <p>© 2025 Smart Teen Finance. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
