@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Smart Teen Finance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-light: radial-gradient(circle at center, #f0f4ff 0%, #ffffff 100%);
+      --bg-dark: radial-gradient(circle at center, #0e1c3d 0%, #0a1224 100%);
+      --container-light: linear-gradient(145deg, #0a1941, #1a2b52);
+      --container-dark: linear-gradient(145deg, #152c58, #0e1c3d);
+      --text-light: #ffffff;
+      --text-dark: #ffffff;
+    }
+
+    body {
+      background: var(--bg-light);
+      color: var(--text-light);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      overflow-x: hidden;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    body.dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .contact-container {
+      background: var(--container-light);
+      padding: 50px;
+      border-radius: 40px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                  0 0 20px #3b69c1,
+                  inset 0 0 25px #224078;
+      animation: fadeIn 1s ease forwards;
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    body.dark-mode .contact-container {
+      background: var(--container-dark);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 25px;
+      text-shadow: 0 0 12px #90caff;
+      letter-spacing: 1.5px;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px #5599ff;
+      line-height: 1.5;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .email-box {
+      background: #ffffff;
+      color: #1a2b52;
+      font-weight: 700;
+      font-size: 1.4rem;
+      padding: 25px 40px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px #5288ff;
+      cursor: pointer;
+      user-select: all;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+
+    .email-box:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 35px #7facff;
+      transform: scale(1.05);
+    }
+
+    .back-link {
+      display: inline-block;
+      padding: 16px 36px;
+      background: #2a5298;
+      border-radius: 35px;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 20px #6599ff;
+      transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+      user-select: none;
+    }
+
+    .back-link:hover {
+      background: #557ee6;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 30px #99bbff;
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    .mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      padding: 10px 20px;
+      background: #2a5298;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #6599ff;
+      transition: background 0.3s ease;
+    }
+
+    .mode-toggle:hover {
+      background: #557ee6;
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
+  <div class="contact-container" role="main" aria-label="Contact section">
+    <h1>Contact Me</h1>
+    <p>If you have any questions, suggestions, or just want to connect, feel free to email:</p>
+    <div class="email-box" tabindex="0" title="Click to copy email" onclick="copyEmail()" onkeypress="if(event.key==='Enter'){copyEmail();}">
+      quentinsdepop@gmail.com
+    </div>
+    <a href="index.html" class="back-link" aria-label="Back to main page">← Back to Main Page</a>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    function copyEmail() {
+      const email = 'quentinsdepop@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        alert('Email copied to clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>

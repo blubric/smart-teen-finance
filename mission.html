@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Mission - Smart Teen Finance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-light: radial-gradient(circle at center, #f0f4ff 0%, #ffffff 100%);
+      --bg-dark: radial-gradient(circle at center, #0e1c3d 0%, #0a1224 100%);
+      --text-light: #1a2b52;
+      --text-dark: #f0f4ff;
+      --container-light: white;
+      --container-dark: #1e2e4a;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--bg-light);
+      color: var(--text-light);
+      min-height: 100vh;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+    body.dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    .container {
+      background: var(--container-light);
+      padding: 60px;
+      border-radius: 30px;
+      max-width: 800px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: background 0.4s ease;
+    }
+    body.dark-mode .container {
+      background: var(--container-dark);
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 30px;
+      background: #2a5298;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .back-link:hover {
+      background: #416ed4;
+    }
+    .mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      padding: 10px 20px;
+      background: #2a5298;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #6599ff;
+    }
+    .mode-toggle:hover {
+      background: #557ee6;
+    }
+  </style>
+</head>
+<body>
+  <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
+  <div class="container">
+    <h1>My Mission</h1>
+    <p>
+      As a teen, I’ve always felt like I wasn't taught enough about money, how to manage it, grow it, or even understand it. That’s why I started Smart Teen Finance.
+    </p>
+    <p>
+        My goal is simple: to teach what I’ve learned, inspire others to care about their financial future, and make personal finance learnable. This is a platform by a teen, for teens made  to guide others the same way I’ve been guiding myself.    </p>
+    <p>
+      Whether you’re just starting to save, trying to budget, or thinking about your first job, I’m here to help make it all make sense.
+    </p>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>

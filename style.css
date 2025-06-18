@@ -1,0 +1,79 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  text-align: center;
+  border: 2px solid #00ff99;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ff99aa;
+  background-color: #181818;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+  color: #00ff99;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #00cc77;
+  border-bottom: 2px solid #00cc77;
+  padding-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 1rem;
+}
+
+.links a {
+  color: #00ff99;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #00cc77;
+  text-decoration: underline;
+}
+
+.contact a {
+  color: #00ff99;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
